@@ -37,6 +37,7 @@ Partial Class P_Principal
         Me.btPediUbicacionCliente = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.btPediDistribicion = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.btPediFacturacionDespacho = New DevComponents.DotNetBar.Metro.MetroTileItem()
+        Me.btPediReporteUtilidades = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.PictureBox03 = New System.Windows.Forms.PictureBox()
         Me.SideNavPanelVenta = New DevComponents.DotNetBar.Controls.SideNavPanel()
         Me.PanelVenta = New System.Windows.Forms.Panel()
@@ -189,7 +190,6 @@ Partial Class P_Principal
         Me.btEscRepCronoClasesPrac = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.btEscRepHorasTrabajadas = New DevComponents.DotNetBar.Metro.MetroTileItem()
         Me.MetroTileItem10 = New DevComponents.DotNetBar.Metro.MetroTileItem()
-        Me.btPediReporteUtilidades = New DevComponents.DotNetBar.Metro.MetroTileItem()
         MetroTileFrame1 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         MetroTileFrame2 = New DevComponents.DotNetBar.Metro.MetroTileFrame()
         Me.SideNav1.SuspendLayout()
@@ -250,10 +250,10 @@ Partial Class P_Principal
         '
         Me.SideNav1.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.SideNav1.Controls.Add(Me.SideNavPanelPedido)
-        Me.SideNav1.Controls.Add(Me.SideNavPanelVenta)
         Me.SideNav1.Controls.Add(Me.SideNavPanelLogistica)
-        Me.SideNav1.Controls.Add(Me.SideNavPaenlConf)
         Me.SideNav1.Controls.Add(Me.SideNavPanelInventario)
+        Me.SideNav1.Controls.Add(Me.SideNavPanelVenta)
+        Me.SideNav1.Controls.Add(Me.SideNavPaenlConf)
         Me.SideNav1.Controls.Add(Me.SideNavPanelCerrarSesion)
         Me.SideNav1.Controls.Add(Me.SideNavPanelRRHH)
         Me.SideNav1.Controls.Add(Me.SideNavPanelCompra)
@@ -478,6 +478,27 @@ Partial Class P_Principal
         Me.btPediFacturacionDespacho.TileStyle.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Far
         Me.btPediFacturacionDespacho.TitleTextAlignment = System.Drawing.ContentAlignment.BottomCenter
         Me.btPediFacturacionDespacho.TitleTextColor = System.Drawing.Color.Red
+        '
+        'btPediReporteUtilidades
+        '
+        Me.btPediReporteUtilidades.Image = CType(resources.GetObject("btPediReporteUtilidades.Image"), System.Drawing.Image)
+        Me.btPediReporteUtilidades.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btPediReporteUtilidades.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Center
+        Me.btPediReporteUtilidades.Name = "btPediReporteUtilidades"
+        Me.btPediReporteUtilidades.SymbolColor = System.Drawing.Color.Empty
+        Me.btPediReporteUtilidades.Text = "REPORTE DE UTILIDADES"
+        Me.btPediReporteUtilidades.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Plum
+        Me.btPediReporteUtilidades.TileSize = New System.Drawing.Size(250, 135)
+        '
+        '
+        '
+        Me.btPediReporteUtilidades.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btPediReporteUtilidades.TileStyle.BackColor2 = System.Drawing.Color.Red
+        Me.btPediReporteUtilidades.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.btPediReporteUtilidades.TileStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btPediReporteUtilidades.TileStyle.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Far
+        Me.btPediReporteUtilidades.TitleTextAlignment = System.Drawing.ContentAlignment.BottomCenter
+        Me.btPediReporteUtilidades.TitleTextColor = System.Drawing.Color.Red
         '
         'PictureBox03
         '
@@ -970,7 +991,7 @@ Partial Class P_Principal
         Me.SideNavPanelLogistica.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SideNavPanelLogistica.Location = New System.Drawing.Point(142, 36)
         Me.SideNavPanelLogistica.Name = "SideNavPanelLogistica"
-        Me.SideNavPanelLogistica.Size = New System.Drawing.Size(876, 565)
+        Me.SideNavPanelLogistica.Size = New System.Drawing.Size(875, 565)
         Me.SideNavPanelLogistica.TabIndex = 164
         Me.SideNavPanelLogistica.Visible = False
         '
@@ -980,7 +1001,7 @@ Partial Class P_Principal
         Me.PanelLogistica.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelLogistica.Location = New System.Drawing.Point(0, 0)
         Me.PanelLogistica.Name = "PanelLogistica"
-        Me.PanelLogistica.Size = New System.Drawing.Size(876, 451)
+        Me.PanelLogistica.Size = New System.Drawing.Size(875, 451)
         Me.PanelLogistica.TabIndex = 4
         '
         'MetroTilePanelLogistica
@@ -1003,7 +1024,7 @@ Partial Class P_Principal
         Me.MetroTilePanelLogistica.Location = New System.Drawing.Point(0, 0)
         Me.MetroTilePanelLogistica.MultiLine = True
         Me.MetroTilePanelLogistica.Name = "MetroTilePanelLogistica"
-        Me.MetroTilePanelLogistica.Size = New System.Drawing.Size(876, 451)
+        Me.MetroTilePanelLogistica.Size = New System.Drawing.Size(875, 451)
         Me.MetroTilePanelLogistica.TabIndex = 3
         Me.MetroTilePanelLogistica.Text = "mtp2Logistica"
         '
@@ -1178,7 +1199,7 @@ Partial Class P_Principal
         Me.PictureBox02.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PictureBox02.Location = New System.Drawing.Point(0, 451)
         Me.PictureBox02.Name = "PictureBox02"
-        Me.PictureBox02.Size = New System.Drawing.Size(876, 114)
+        Me.PictureBox02.Size = New System.Drawing.Size(875, 114)
         Me.PictureBox02.TabIndex = 5
         Me.PictureBox02.TabStop = False
         Me.PictureBox02.Visible = False
@@ -2956,27 +2977,6 @@ Partial Class P_Principal
         Me.MetroTileItem10.TileStyle.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Far
         Me.MetroTileItem10.TitleTextAlignment = System.Drawing.ContentAlignment.BottomCenter
         Me.MetroTileItem10.TitleTextColor = System.Drawing.Color.Red
-        '
-        'btPediReporteUtilidades
-        '
-        Me.btPediReporteUtilidades.Image = CType(resources.GetObject("btPediReporteUtilidades.Image"), System.Drawing.Image)
-        Me.btPediReporteUtilidades.ImageTextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btPediReporteUtilidades.ItemAlignment = DevComponents.DotNetBar.eItemAlignment.Center
-        Me.btPediReporteUtilidades.Name = "btPediReporteUtilidades"
-        Me.btPediReporteUtilidades.SymbolColor = System.Drawing.Color.Empty
-        Me.btPediReporteUtilidades.Text = "REPORTE DE UTILIDADES"
-        Me.btPediReporteUtilidades.TileColor = DevComponents.DotNetBar.Metro.eMetroTileColor.Plum
-        Me.btPediReporteUtilidades.TileSize = New System.Drawing.Size(250, 135)
-        '
-        '
-        '
-        Me.btPediReporteUtilidades.TileStyle.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btPediReporteUtilidades.TileStyle.BackColor2 = System.Drawing.Color.Red
-        Me.btPediReporteUtilidades.TileStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.btPediReporteUtilidades.TileStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btPediReporteUtilidades.TileStyle.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Far
-        Me.btPediReporteUtilidades.TitleTextAlignment = System.Drawing.ContentAlignment.BottomCenter
-        Me.btPediReporteUtilidades.TitleTextColor = System.Drawing.Color.Red
         '
         'P_Principal
         '

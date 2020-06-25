@@ -1151,6 +1151,10 @@ Public Class P_Principal
         frm.Show()
         tab3.Text = frm.Text
     End Sub
+
+    Private Sub FP_Venta_Click(sender As Object, e As EventArgs) Handles FP_Venta.Click
+
+    End Sub
 #End Region
 
 #End Region

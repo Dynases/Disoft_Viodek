@@ -22,7 +22,11 @@ Partial Class R0_ReportePedidosCosto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim tbEstado_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(R0_ReportePedidosCosto))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tbEstado = New Janus.Windows.GridEX.EditControls.MultiColumnCombo()
+        Me.LabelX15 = New DevComponents.DotNetBar.LabelX()
         Me.tbVendedor = New DevComponents.DotNetBar.Controls.TextBoxX()
         Me.CheckTodosAlmacen = New DevComponents.DotNetBar.Controls.CheckBoxX()
         Me.CheckTodosVendedor = New DevComponents.DotNetBar.Controls.CheckBoxX()
@@ -42,6 +46,7 @@ Partial Class R0_ReportePedidosCosto
         CType(Me.MEP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MGpFiltro.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.tbEstado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbFechaF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tbFechaI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -153,6 +158,8 @@ Partial Class R0_ReportePedidosCosto
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.tbEstado)
+        Me.GroupBox1.Controls.Add(Me.LabelX15)
         Me.GroupBox1.Controls.Add(Me.tbVendedor)
         Me.GroupBox1.Controls.Add(Me.CheckTodosAlmacen)
         Me.GroupBox1.Controls.Add(Me.CheckTodosVendedor)
@@ -171,6 +178,37 @@ Partial Class R0_ReportePedidosCosto
         Me.GroupBox1.TabIndex = 236
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
+        '
+        'tbEstado
+        '
+        Me.tbEstado.ComboStyle = Janus.Windows.GridEX.ComboStyle.DropDownList
+        tbEstado_DesignTimeLayout.LayoutString = resources.GetString("tbEstado_DesignTimeLayout.LayoutString")
+        Me.tbEstado.DesignTimeLayout = tbEstado_DesignTimeLayout
+        Me.tbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbEstado.Location = New System.Drawing.Point(108, 182)
+        Me.tbEstado.Name = "tbEstado"
+        Me.tbEstado.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Custom
+        Me.tbEstado.Office2007CustomColor = System.Drawing.Color.DodgerBlue
+        Me.tbEstado.SelectedIndex = -1
+        Me.tbEstado.SelectedItem = Nothing
+        Me.tbEstado.Size = New System.Drawing.Size(155, 21)
+        Me.tbEstado.TabIndex = 247
+        Me.tbEstado.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2007
+        '
+        'LabelX15
+        '
+        '
+        '
+        '
+        Me.LabelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.LabelX15.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.LabelX15.Location = New System.Drawing.Point(6, 181)
+        Me.LabelX15.Name = "LabelX15"
+        Me.LabelX15.Size = New System.Drawing.Size(94, 23)
+        Me.LabelX15.TabIndex = 246
+        Me.LabelX15.Text = "Estado Pedido:"
+        Me.LabelX15.TextAlignment = System.Drawing.StringAlignment.Far
         '
         'tbVendedor
         '
@@ -234,12 +272,12 @@ Partial Class R0_ReportePedidosCosto
         '
         Me.tbCodigoVendedor.Border.Class = "TextBoxBorder"
         Me.tbCodigoVendedor.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square
-        Me.tbCodigoVendedor.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbCodigoVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbCodigoVendedor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.tbCodigoVendedor.Location = New System.Drawing.Point(6, 153)
         Me.tbCodigoVendedor.Name = "tbCodigoVendedor"
         Me.tbCodigoVendedor.PreventEnterBeep = True
-        Me.tbCodigoVendedor.Size = New System.Drawing.Size(22, 25)
+        Me.tbCodigoVendedor.Size = New System.Drawing.Size(22, 22)
         Me.tbCodigoVendedor.TabIndex = 238
         Me.tbCodigoVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.tbCodigoVendedor.Visible = False
@@ -286,7 +324,7 @@ Partial Class R0_ReportePedidosCosto
         Me.tbFechaF.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tbFechaF.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
         Me.tbFechaF.ButtonDropDown.Visible = True
-        Me.tbFechaF.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbFechaF.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbFechaF.IsPopupCalendarOpen = False
         Me.tbFechaF.Location = New System.Drawing.Point(145, 49)
         '
@@ -319,7 +357,7 @@ Partial Class R0_ReportePedidosCosto
         Me.tbFechaF.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tbFechaF.MonthCalendar.TodayButtonVisible = True
         Me.tbFechaF.Name = "tbFechaF"
-        Me.tbFechaF.Size = New System.Drawing.Size(120, 25)
+        Me.tbFechaF.Size = New System.Drawing.Size(120, 22)
         Me.tbFechaF.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.tbFechaF.TabIndex = 234
         '
@@ -348,7 +386,7 @@ Partial Class R0_ReportePedidosCosto
         Me.tbFechaI.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tbFechaI.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown
         Me.tbFechaI.ButtonDropDown.Visible = True
-        Me.tbFechaI.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbFechaI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbFechaI.IsPopupCalendarOpen = False
         Me.tbFechaI.Location = New System.Drawing.Point(145, 18)
         '
@@ -381,7 +419,7 @@ Partial Class R0_ReportePedidosCosto
         Me.tbFechaI.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
         Me.tbFechaI.MonthCalendar.TodayButtonVisible = True
         Me.tbFechaI.Name = "tbFechaI"
-        Me.tbFechaI.Size = New System.Drawing.Size(120, 25)
+        Me.tbFechaI.Size = New System.Drawing.Size(120, 22)
         Me.tbFechaI.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled
         Me.tbFechaI.TabIndex = 232
         '
@@ -407,6 +445,7 @@ Partial Class R0_ReportePedidosCosto
         Me.MGpFiltro.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.tbEstado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbFechaF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tbFechaI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -423,4 +462,6 @@ Partial Class R0_ReportePedidosCosto
     Friend WithEvents tbFechaF As DevComponents.Editors.DateTimeAdv.DateTimeInput
     Friend WithEvents LabelX3 As DevComponents.DotNetBar.LabelX
     Friend WithEvents tbFechaI As DevComponents.Editors.DateTimeAdv.DateTimeInput
+    Friend WithEvents tbEstado As Janus.Windows.GridEX.EditControls.MultiColumnCombo
+    Friend WithEvents LabelX15 As DevComponents.DotNetBar.LabelX
 End Class

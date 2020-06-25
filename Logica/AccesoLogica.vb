@@ -1021,20 +1021,41 @@ Public Class AccesoLogica
         _Tabla = D_Datos_Tabla(_top + " oanumi,oafdoc,oahora,oaccli,ccdesc,ccdirec,cctelf1,cccat,oazona,cedesc,oaobs,oaobs2,oaest,cclat,cclongi,oaap,oapg,ccultvent,oarepa,oaanumiprev ", "TO001,TC004,TC0051,TL001,TO001A", _Where + " order by oanumi desc")
         Return _Tabla
     End Function
-    Public Shared Function L_prListarReportePEdidosVsCosto(_fechaI As String, _FechaF As String) As DataTable
+    Public Shared Function L_prListarReportePEdidosVsCosto(_fechaI As String, _FechaF As String, _estado As Integer) As DataTable
         Dim _Tabla As DataTable
         Dim _listParam As New List(Of Datos.DParametro)
         _listParam.Add(New Datos.DParametro("@tipo", 10))
+        _listParam.Add(New Datos.DParametro("@fechaI", _fechaI))
+        _listParam.Add(New Datos.DParametro("@fechaF", _FechaF))
+        _listParam.Add(New Datos.DParametro("@estadoped", _estado))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_ReporteVentas", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prListarReportePEdidosVsCostoAmbos(_fechaI As String, _FechaF As String) As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 13))
         _listParam.Add(New Datos.DParametro("@fechaI", _fechaI))
         _listParam.Add(New Datos.DParametro("@fechaF", _FechaF))
         _Tabla = D_ProcedimientoConParam("sp_Mam_ReporteVentas", _listParam)
         Return _Tabla
     End Function
 
-    Public Shared Function L_prListarReportePEdidosVsCostoUnVendedor(_fechaI As String, _FechaF As String, numiVendedor As String) As DataTable
+    Public Shared Function L_prListarReportePEdidosVsCostoUnVendedor(_fechaI As String, _FechaF As String, numiVendedor As String, _estado As Integer) As DataTable
         Dim _Tabla As DataTable
         Dim _listParam As New List(Of Datos.DParametro)
         _listParam.Add(New Datos.DParametro("@tipo", 11))
+        _listParam.Add(New Datos.DParametro("@fechaI", _fechaI))
+        _listParam.Add(New Datos.DParametro("@fechaF", _FechaF))
+        _listParam.Add(New Datos.DParametro("@numi", numiVendedor))
+        _listParam.Add(New Datos.DParametro("@estadoped", _estado))
+        _Tabla = D_ProcedimientoConParam("sp_Mam_ReporteVentas", _listParam)
+        Return _Tabla
+    End Function
+    Public Shared Function L_prListarReportePEdidosVsCostoUnVendedorAmbos(_fechaI As String, _FechaF As String, numiVendedor As String) As DataTable
+        Dim _Tabla As DataTable
+        Dim _listParam As New List(Of Datos.DParametro)
+        _listParam.Add(New Datos.DParametro("@tipo", 14))
         _listParam.Add(New Datos.DParametro("@fechaI", _fechaI))
         _listParam.Add(New Datos.DParametro("@fechaF", _FechaF))
         _listParam.Add(New Datos.DParametro("@numi", numiVendedor))

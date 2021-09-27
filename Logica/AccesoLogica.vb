@@ -990,7 +990,7 @@ Public Class AccesoLogica
         Else
             _Where = "oanumi=oanumi AND ccnumi=oaccli AND oazona=lanumi AND cecon=2 AND lazona=cenum " + _Cadena
         End If
-        _Tabla = D_Datos_Tabla("DISTINCT oanumi,oafdoc,oahora,cccod,ccdesc,ccdirec,cctelf1,cccat,cczona as oazona,cedesc,oaobs,oaobs2,oaest,cclat,cclongi,oaap,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi)>0,1,0 ) as reclamo,oapg,ccultvent,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi and oftip=1)>0,1,0 ) as tipoRecCliente,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi and oftip=2)>0,1,0 ) as tipoRecRepartidor, ccnumi, cceven", "TO001,TC004,TC0051,TL001", _Where + " order by oanumi")
+        _Tabla = D_Datos_Tabla("DISTINCT TOP 1000 oanumi,oafdoc,oahora,cccod,ccdesc,ccdirec,cctelf1,cccat,cczona as oazona,cedesc,oaobs,oaobs2,oaest,cclat,cclongi,oaap,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi)>0,1,0 ) as reclamo,oapg,ccultvent,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi and oftip=1)>0,1,0 ) as tipoRecCliente,IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi and oftip=2)>0,1,0 ) as tipoRecRepartidor, ccnumi, cceven", "TO001,TC004,TC0051,TL001", _Where + " order by oanumi desc")
         Return _Tabla
     End Function
 
@@ -1070,7 +1070,7 @@ Public Class AccesoLogica
         Else
             _Where = "oanumi=oanumi AND ccnumi=oaccli AND cczona=lanumi AND cecon=2 AND lazona=cenum and tc004.cczona = tl001.lanumi and tl001.lanumi = tl0012.lcnumi " + _Cadena
         End If
-        _Tabla = D_Datos_Tabla("DISTINCT oanumi,oafdoc,oahora,cccod,ccdesc,ccdirec,cctelf1,cccat," _
+        _Tabla = D_Datos_Tabla("DISTINCT TOP 1000 oanumi,oafdoc,oahora,cccod,ccdesc,ccdirec,cctelf1,cccat," _
                                + "cczona as oazona,cedesc,oaobs,oaobs2,oaest,cclat,cclongi,oaap," _
                                + "IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi)>0,1,0 ) as reclamo," _
                                + "oapg,ccultvent," _
@@ -1078,7 +1078,7 @@ Public Class AccesoLogica
                                + "IIF((select COUNT(ofnumiped) from TO0014 where ofnumiped=oanumi And oftip=2)>0,1,0 ) as tipoRecRepartidor," _
                                + "ccnumi, cceven",
                                "TO001,TC004,TC0051,TL001,TL0012",
-                               _Where + " order by oanumi")
+                               _Where + " order by oanumi desc")
         Return _Tabla
     End Function
 
